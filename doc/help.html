@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>The Daily Journal help file</title>
+	<meta name="generator" content="LibreOffice 7.3.3.2 (Linux)"/>
+	<meta name="author" content="Kartik Patel"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2022-06-19T16:05:42.186977660"/>
+	<style type="text/css">
+		h2.cjk { font-family: "Noto Serif CJK SC" }
+		h2.ctl { font-family: "Noto Sans Devanagari" }
+		h3.cjk { font-family: "Noto Serif CJK SC" }
+		h3.ctl { font-family: "Noto Sans Devanagari" }
+		h4.cjk { font-family: "Noto Serif CJK SC" }
+		h4.ctl { font-family: "Noto Sans Devanagari" }
+	</style>
+</head>
+<body lang="en-IN" dir="ltr"><h1 align="center">The Daily Journal
+Help file</h1>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">Contents</h2>
+<p><a href="#Introduction">Introduction</a><br/>
+<a href="#The_User_Interface">The
+User Interface</a></p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><a href="#NOTES">Journal</a> 
+	</p>
+	<li><p style="margin-bottom: 0cm"><a href="#APPOINTMENTS">Appointments</a>
+		</p>
+	<li><p style="margin-bottom: 0cm"><a href="#CONTACTS">Contacts</a> 
+	</p>
+	<li><p style="margin-bottom: 0cm"><a href="#LIST">To-Do list</a> 
+	</p>
+	<li><p style="margin-bottom: 0cm"><a href="#HOLIDAYS">Holidays</a> 
+	</p>
+	<li><p style="margin-bottom: 0cm"><a href="#Global_Search">Search</a></p>
+	<li><p style="margin-bottom: 0cm"><a href="#HELP">Help</a> 
+	</p>
+	<li><p><a href="#PREFS">Preferences</a> 
+	</p>
+</ul>
+<p align="left" style="margin-bottom: 0cm"><a href="#KEYS">Key
+bindings</a><br/>
+<a href="#data">Storage and data files</a><br/>
+<a href="#limits">Program
+limits</a><br/>
+<a href="#compile">Compilation</a><br/>
+<a href="#copying">License
+and copying policy</a></p>
+<p>&nbsp; 
+</p>
+<h3 class="western"><a name="Introduction"></a>Introduction</h3>
+<p><i>Fltdj</i> is a PIM program. PIM stands for <i>Personal
+Information Manager - </i>a digital secretary, if you will. Only
+thing is, you have to do all the typing yourself... 
+</p>
+<p>Does it work at all? Well, it works for me, when it is in the
+mood. But that is probably because of its sense of obligation, since
+I wrote it and, in the process, pulled it out of binary limbo into PC
+hell. Your mileage may vary.<br/>
+<br/>
+Does it do anything useful?
+Well, if you are in the habit of keeping daily notes, or a diary, or
+a journal of your activities, <i>fltdj</i> can keep them organised
+and accessible. It also stores your daily appointments, contact list
+and to-do list, and prompts you before upcoming appointments.</p>
+<p>While there is no guarantee that there will be future versions,
+there is every probability of the version number increasing in the
+future as and when I get the time, and/or if enough people ask.</p>
+<h3 class="western"><a name="The_User_Interface"></a>The User
+Interface</h3>
+<p>The main user interface window is in two parts. On the left side
+is a clock and a calendar, which try to remain the same size however
+you try to resize the window. You can change the month and year by
+clicking on the arrows by the side of the <i>Year</i> and <i>Month</i>
+displays. The nice clock displays the current time so you can, well,&nbsp;
+see what time it is. There is an <i><b>&quot;Exit&quot;</b></i>
+button conveniently located which you can click on to get rid of the
+program when you are sufficiently exasperated, or if it has not
+segfaulted already. See figure below.</p>
+<p align="center" style="margin-bottom: 0cm"><font color="#000000">
+  <img src="ui.jpg" name="Image1" alt="fltdj user interface" align="middle" hspace="10" vspace="10" width="740" height="344" border="2"/>
+</font>
+</p>
+<p><br/>
+Some buttons and smaller windows display little boxes
+containing helpful information when the mouse pointer is held
+stationary over them. Sometimes they don't, if the program is not
+feeling particularly helpful, or if the mouse was thinking of
+something else when its cursor landed up on them. These little boxes
+are, quaintly, called &quot;tooltips&quot;. While some may hold
+useful tips, many others may be just plain confusing. What the &quot;tool&quot;
+signifies, I don't know. &nbsp;Perhaps it is meant to clarify that,
+whatever the tips are, they won't be about the stock-market.<br/>
+The
+current day and date is also always shown. This date is checked six
+times an hour by an internal timer and will change the display in ten
+minutes (at most) after midnight. If you are in the habit of burning
+the midnight oil while writing the Great Daily Novel, you can see
+that today has changed to tomorrow and start on tomorrow's , that is
+today's&nbsp; novel right away, before it becomes yesterday. <br/>
+Along
+the top on the right is a row of tabs. (see the figure below) . When
+the program starts, it displays the licensing and copyright
+information under the About tab.<br/>
+To enter a note for the day,
+you click on the Journal tab, and type your thoughts in the blank
+area to the right. <br/>
+If you haven't noticed it already, the tabs
+are <i><b><a href="#NOTES">Journal</a>,<a href="#APPOINTMENTS">
+Appointments</a>, <a href="#CONTACTS">Contacts</a>,<a href="#LIST">ToDo</a>
+, <a href="#HOLIDAYS">Holidays</a>, <a href="#Global_Search">Global
+Search</a>, <a href="#PREFS">Preferences</a>,<a href="#HELP">Help</a>,
+</b></i>and <i><b><a href="#copying">About</a>.<br/>
+</b></i>Read on
+for the exciting details of how to use them.</p>
+<p align="center" style="margin-bottom: 0cm"><font color="#000000">
+  <img src="tabs.jpg" name="Image2" alt="Image of user interface" align="bottom" hspace="5" vspace="5" width="623" height="40" border="2"/>
+</font>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h4 class="western"><a name="NOTES"></a><i><b>JOURNAL</b></i> 
+</h4>
+<p>You can store your thoughts for a particular day by clicking on
+the appropriate date button on the calendar. The program displays any
+previous note, or shows a blank window if there is none, or shows a
+quote from the fortune database, if the preferences are set for
+that.Your note can be as long as you want (while it's only a note,
+you can write and store a novel everyday). <br/>
+Days associated with
+notes are displayed inside a raised circular button, otherwise the
+buttons are square. <br/>
+To retrieve the note for any particular
+day, click on the desired date; it is displayed on the right (if the
+Journal tab is on the foreground) and you can add to or modify the
+text if needed. The date associated with any note is shown above the
+note, and the corresponding button on the calendar shows the date in
+red.<br/>
+You can go to the next or previous note (<i>not</i> the
+next or previous date) by clicking on the left and right arrow
+buttons to the left of the text area. <br/>
+You can search for a
+particular text string by typing it in the box at the bottom. below
+the text area, and clicking the &quot;Search:&quot; button. The
+program searches for and displays the note in which the string is
+found. Repeatedly clicking this button searches for successive
+occurrences of the string <i>only in the current month</i>, (this a,
+well, feature, shall we say?) and continues to display the note in
+which it is found. <br/>
+The program goes to the note for the day
+containing the search text, if it occurs in the current month.
+<br/>
+Switching to any other day or tab automatically saves the data.
+Switching to any other month updates the notes file. 
+</p>
+<h4 class="western"><a name="APPOINTMENTS"></a><i><b>APPOINTMENTS</b></i>
+</h4>
+<p>In order to see or add appointments to your daily schedule, use
+the &quot;<i>Appointments</i>&quot; tab. <br/>
+To bring up the
+appointments for any particular day, click on the desired date and
+the <i>&quot;Appointments&quot; </i>tab, if this tab is not on the
+foreground. They are displayed on the right.&nbsp; Here you can enter
+your appointment details in the last row of two colored boxes (at the
+bottom). <br/>
+The first box is for the time, in 24 hour format. Type
+<i>only numbers</i> in this field. Don't use any other character to
+separate the hours and minutes, such as &quot;:&quot;, &quot;.&quot;,
+or &quot;-&quot;. Since this field is used to sort the appointments
+in chronological order, it will not accept any other character.<br/>
+Also
+keep in mind that if an appointment is scheduled for more than 2400
+hrs, (suppose you typed in <b>2430</b> instead of 1430!&nbsp; (we all
+make mistakes - see the number of <i>fltdj</i> bug-fix versions
+released!)) it is trapped as an error, and the time will be set at
+<b>2400</b> hrs. Similarly for times below 0000 hrs (say, <b>-1430</b>,
+though even I wouldn't make this mistake). These are set at
+<b>0000</b>hr.<br/>
+The other box can be used for any other
+information. Typically, you can put the name of the person, phone
+number, and place of appointment, but any alphanumeric information is
+accepted and stored.<br/>
+Remember to restrict each entry to about 60
+characters. There are only 24 appointments allowed in this version. I
+don't know of any real reason for this, but if you can think of any,
+contact me. But seriously, if anyone feels this number is not
+sufficient, let me know and I will increase it in the next version.
+<br/>
+After filling in the details, click &quot;Add&quot; to add it
+to the appontments. It will be inserted in the correct place within
+the list of appointments. 
+</p>
+<p>If you want to modify an existing appointment, click the up or
+down arrow buttons until it is highlighted in red, and make the
+changes in the same boxes, where it will simultaneously appear. Click
+&quot;Modify&quot;. That's it. &nbsp;If required it will be moved
+into the correct position so that the list is in chronological order.
+<br/>
+In order to delete an appointment, highlight it using the up or
+down arrow buttons and click on &quot;Delete&quot;. The list of
+appointments will move up to close the gap made by the deleted
+appointment. 
+</p>
+<p>The current appointment and the total number of appointments for
+this day is always displayed in the little box between the &quot;Close&quot;
+and &quot;Add&quot; buttons. <br/>
+You can click on the left and
+right arrow buttons to move to the next or previous day with
+appointments. Days without an appointment are skipped. If you need to
+set appointments for a day which does not have any, you will need to
+click on that date button on the calendar.<br/>
+<i><br/>
+Fltdj</i>
+will alert you ten minutes before any appointment with a discreet
+little window that pops up with a beep. It remains onscreen until you
+acknowledge its presence by clicking the 'OK' button. Appointment
+alerts are issued only when the program is running. If you exit
+<i>fltdj</i>, there will be no alerts. <br/>
+Appointment alerts are
+<i><b>not issued if there are less than 10 minutes to go for a new or
+modified appointment! </b></i>The program assumes that you can
+remember an appointment which has been fixed or rescheduled to occur
+within the next ten minutes. If that is not the case, the GPL does
+not cover short term memory, unfortunately. Actually it covers
+nothing, just like a real insurance policy, but your mileage may
+vary.</p>
+<p>Two non-fatal but annoying bugs have been removed. Users of
+earlier versions (if there <i>were</i> any!) may remember that on
+modifying any future appointment, alerts were sounded on both the
+original time as well as the modified time. We always prefer to err
+on the safe side. This has been rectified, as promised. We always
+keep our promises, eventually! Another bug that has been rectified is
+the alert for appointments which have been deleted! 
+</p>
+<p>Normally, the days on the calendar are displayed as square
+buttons. Days with a note attached are displayed with a round button.
+Days with appointments only (and no note) are displayed with the
+square button depressed down. Days having both a note and
+appointments are displayed with a round depressed button. <br/>
+The
+appointments data is stored when you switch to any other day and file
+is updated when switching to another tab.</p>
+<h4 class="western"><a name="CONTACTS"></a><i><b>CONTACTS</b></i> 
+</h4>
+<p>Clicking on &quot;<i>Contacts</i>&quot; will display the contacts
+data.</p>
+<p>Type in the name, address and all other details in the larger
+area, below the top blank box. Enter carriage-returns wherever needed
+to format the data as you like. When you have finished, click &quot;Add&quot;
+on the left side of the window. <br/>
+The first line of the data will
+be copied to the top blank box, and it will appear there. 
+</p>
+<p>To add more contacts, delete the data and type in whatever is
+needed, and again click &quot;Add&quot;. This will add the second
+record. <br/>
+You can continue to build up your contact list in this
+manner. If you click the small arrow to the left of the top text box,
+it will drop down to reveal a list which contains the first lines of
+all the contacts you have typed in. You can select any one of them to
+see the details. 
+</p>
+<p>To modify, alter the text and click &quot;Modify&quot;. <br/>
+To
+delete, just click &quot;Delete&quot;. 
+</p>
+<p>You can search for a particular contact by typing it in the search
+box at the bottom and clicking the &quot;Search&quot; button. The
+contact containing that text will be displayed. Successive
+occurrences will be displayed on clicking the &quot;Find&quot; button
+again.</p>
+<h4 class="western"><a name="LIST"></a><i><b>TO-DO LIST</b></i></h4>
+<p>Click the &quot;<i>To-Do&quot;</i> to display your list of pending
+work. Enter your text in the editor. 
+</p>
+<h4 class="western"><a name="HOLIDAYS"></a><i><b>HOLIDAYS and
+ANNIVERSARIES</b></i> 
+</h4>
+<p>Select &quot;Holidays&quot; to bring up the list of holidays (if
+entered earlier), or a blank list if you are creating it for the
+first time. The interface is similar to that for appointments. Enter
+the date and month in the first two boxes in the last row, and a
+description of the holiday or anniversary in the third box. Click the
+&quot;Add&quot; button to add it to the list. The corresponding date
+will be colored yellow. Holidays are days of sunny happiness, right?</p>
+<p>Continue adding in this manner to build up a list of upto 100
+holidays. Look, if you have more holidays than this,&nbsp; you don't
+need this program anyway.</p>
+<p>To delete a holiday use the up and down buttons to highlight and
+select it. Click &quot;Delete&quot; to remove it from the list. <br/>
+The
+holiday list is stored in a file as soon as you switch to any other
+tab. It will be available the next time fltdj is used. When the mouse
+cursor is held stationary over a yellow date, the description of the
+holiday will pop up to remind you what the occasion is. The journal
+tab also displays the holiday by the side of the day and date near
+the top.</p>
+<h4 class="western"><a name="Global_Search"></a><i><b>GLOBAL SEARCH</b></i></h4>
+<p>Normally, when the <i>Search </i>button is clicked after typing
+some text in the box to its right, it displays the next journal entry
+(or appointment day, if the <i>Appointments</i> tab is in the
+foreground, or the next contact if the <i>Contact</i> tab is visible)
+containing the text in the <i>current month</i>. When the <i>Global
+Search</i> tab is in the foreground, it displays a list of <i>all the
+months and dates</i> that contain the text (either in a note or
+appointment) that was typed in the text box. Multiple entries for a
+particular month means multiple occurences of the text in that month.
+This is another feature, shall we say. I am working on it.<br/>
+<br/>
+Clicking
+on any entry highlights it. It is then possible to open that
+particular date by clicking again on the entry. This displays the
+<i>Journal</i> tab, or the <i>Appointments</i> tab, as the case may
+be, with the journal or appointments for that date.</p>
+<h4 class="western"><a name="PREFS"></a><i><b>PREFERENCES</b></i></h4>
+<p><b>Font face:</b>Change by dragging the button on the slider. A
+sample of how the text will appear is displayed in the small window
+beside the sliders.<br/>
+<b>Font size:</b> Ditto.<br/>
+<b>Show
+fortune when displaying blank notes:</b>When this box is checked,
+<i>fltdj</i> will fetch a quotation from the database of the
+&quot;fortune&quot; program (if it is installed) when displaying the
+note window for a day which does not have any note. This quotation
+<b>will become part of the day's noting</b> if you leave the window
+as it is without typing anything in it, unless you explicitly erase
+it.<br/>
+No quotation will be displayed if the day already contains
+some text. No point in having too much of a good thing, no? No.</p>
+<p>You can apply the preferences for the current session by clicking
+on the <i>&quot;Apply&quot;</i> button.</p>
+<p>Save your&nbsp;preferences for later sesions by clicking on the
+<i>&quot;Save&quot;</i> button.&nbsp; 
+</p>
+<h4 class="western"><a name="HELP"></a><i><b>HELP</b></i> 
+</h4>
+<p>Click on <i>&quot;Help&quot;</i> to display this information,
+which is stored in the file named &quot;help.html&quot; in the
+subdirectory &quot;doc&quot;. You can also open it in any other
+browser (such as Mozilla) which will render the HTML better than the
+internal browser. 
+</p>
+<h3 class="western"><a name="KEYS"></a><b>Key Bindings</b> 
+</h3>
+<p>Some of the buttons on the program have keys bound to them, so
+that the action that is produced by the clicking of the left mouse
+button can be performed via the keyboard. <br/>
+Some or all of the
+following can be used on the <i>Notes, Contacts</i>, <i>ToDo</i> and
+<i>Holiday</i> windows: <br/>
+<i><br/>
+Alt-a:</i> Add the data
+<br/>
+<i>Alt-m:</i> Modify the data <br/>
+<i>Alt-d:</i> Delete the
+data<br/>
+<i><br/>
+Alt-s</i>: Search for the text which has been
+entered in the box. This displays the next journal entry containing
+the search text if the <i>Journal</i> tab is visible. If the
+<i>Appointments</i> tab is visible it displays the next day which has
+an appointment containing the search text. If the <i>Global Search</i>
+tab is visible, it displays <i>all</i> the months containing the
+search text. An entry in the list can be highlighted with a
+left-click, and then displayed in the <i>Journal</i> tab by clicking
+on the <i>&quot;Show&quot;</i> button.<br/>
+<i>Alt-h:</i> Display the
+highlighted entry in the <i>Global Search</i> tab in the <i>Journal</i>
+tab.</p>
+<p><i>Alt-y</i>: Go to the previous year.<br/>
+<i>Alt-Y</i>: Go to
+the next year<br/>
+<i>Alt-m</i>: Go to the previous month<br/>
+<i>Alt-M</i>:
+Go to the next month</p>
+<p><i>Alt-x:</i> Exit the program. 
+</p>
+<h3 class="western"><a name="data"></a><b>Storage and Data files</b> 
+</h3>
+<p>The program stores the notes for each month in a separate file. At
+present the names of these files cannot be altered. <br/>
+The files
+are created automatically, as and when required, and are named with
+the year and month, in numerals, followed by the extension &quot;tdj&quot;.
+For example, the notes for December, 2002 will be stored in the file
+&quot;2002-12.tdj&quot;. <br/>
+The contact list is stored in the file
+&quot;contacts.tdj&quot;, and the to-do list is stored in the file
+&quot;todo.tdj&quot;. <br/>
+The holidays and anniversaries are stored
+in &quot;holiann.tdj&quot;. At first I thought of calling
+it&quot;annholi&quot;, but the present name has a more angelic
+connotation to it ...<br/>
+The preferences are stored in the file
+&quot;prefs.tdj&quot;.<br/>
+All the files are in the &quot;hidden&quot;
+directory, ~/.fltdj, where the tilde (~) represents your home
+directory. <br/>
+Different users can use the program without their
+data getting mixed up, provided the user directories are different.
+<br/>
+<i>fltdj</i> checks for the presence of this directory when
+opening any data file, and alerts you if it is absent.</p>
+<h3 class="western" align="center">Do not edit these files in any
+other editor! 
+</h3>
+<h3 class="western"><a name="limits"></a><b>Program Limits</b> 
+</h3>
+<p>In this version: <br/>
+<i>Number of notes</i>: One for each day,
+with no limit on the length of the note. The 1000 character limit of
+earlier <b>fltdj</b> versions has been removed. Progress! Well, of
+some sort. <br/>
+<i>Number of appointments</i>: 24 for each day. How
+active can you be? One needs time to relax as well. <br/>
+<i>Number
+of contacts</i>: 500, with no limit on the length of the contact
+information. The earlier 200 character limit no longer exists. More
+progress. <br/>
+While this is only contact info, you may store a
+graphic&nbsp; description of the person, his (her) life history,
+where you met him (her), and why he (she) is in the database at
+all... <br/>
+<i>To-do list</i>: No limit. Have you ever encountered
+the situation where your work is complete and you can relax? <br/>
+<i>Number
+of holidays and anniversaries</i>: 100. You cannot type anything
+except numbers in the date and month fields. The description cannot
+be more than 35 characters.<br/>
+<i>Searching</i>: At present the
+search function in the <i>Journal</i> tab spans only the month
+currently being displayed. Use the <i>Global Search</i> tab to locate
+other months.</p>
+<p>If anyone wants more data space, just <a href="mailto:kpatel@hotpop.com">e-mail
+me</a>, and I will provide... 
+</p>
+<p>The behaviour of the program is undefined if these limits are
+exceeded. Basically, this means that I have not incorporated any
+error checks, and that if you lose your data, the GPL protects me
+from any liability. But seriously, things are expected to improve For
+example, backups will appear in a future version. All in good time...
+</p>
+<hr/>
+
+<p align="center"><i><b>-:IMPORTANT:-</b></i> <br/>
+<i>The program
+does not make backups at present!</i> 
+</p>
+<h3 class="western" align="center"><i><b>Do remember to make backups
+of files in the ~/.fltdj directory in order to avoid data loss.</b></i></h3>
+<hr/>
+
+<h3 class="western"><a name="compile"></a><b>Compilation</b></h3>
+<p>It's not yet already compiled? <br/>
+Very simple, just run &quot;make&quot;.
+See the README file for details on what else you need to make a
+binary. 
+</p>
+<h3 class="western"><a name="copying"></a><b>About</b> <b>The Daily
+Journal</b></h3>
+<p>This program is copyright, (C) 2001 onwards, Kartik Patel. <br/>
+This
+program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at
+your option) any later version. This program is distributed in the
+hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU General Public License for more details. You
+should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation,
+Inc., 675 Mass Ave, Cambridge, MA 02139, USA. 
+</p>
+<hr/>
+
+<p align="center"><i>Kartik Patel</i><br/>
+<b>http</b><b>s:</b><b>//</b><b>l</b><b>etapk.</b><b>wordpress.com</b></p>
+</body>
+</html>
