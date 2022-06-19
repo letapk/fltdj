@@ -1,0 +1,270 @@
+19 June 2022 - Updated documentation.
+17 Apr 2004 - Modified global search code to display journal or appointment on clicking the
+			results list. Deleted "Show" button.
+			Modified html doc file.
+			Rebuilt 0.7rc1.
+16 Apr 2004 - Sorting of contacts was broken in 0.7. Added sort_contacts while saving contact
+			data.
+			Display of note after global search mangles journal data. Fixed.
+			Changed format of list entry after global search.
+4 Apr 2004 - Added code in global search to get filename list in .fltdj directory, read and search
+			the data and display results under global search tab in appt and noting column.
+			Fixed a potential segfault while reading unallocated pointer (noting[0]) in journal
+			file.
+28 Mar 2004 - Splitting global search to a separate file.
+21 Mar 2004 - Increased buffer for global search to fix segfault when lines are too
+			long! Added line in searchlistshow_cb to jump to first instance of text
+			found during global search.
+			Buggy issue: phrase in global search leads to incorrect results. Traced to
+			binary data associated with appointments, misleading grep to return wrong
+			results ("Binary file matches").
+			Changed name of lockfile to exclude it from global searches. The "-" was
+			the culprit. Remember not include it in any  data filename.
+			Fixed a strange bug in which the fortune command line was being displayed
+			in the appointment number box. How things interact in weird ways. This was
+			due to the commontext buffer being filled with the fortune command when
+			the apptab was in the forground, and since the appt number also used the
+			same buffer, this got displayed when an empty note was clicked on the
+			calendar, and when the fortune option was turned on...
+			Fixed.
+			Remade targz package for rc1.
+15 Jan 2004 - Made targz package for rc1. Not released yet.
+               Modified makefile to link static executable. Needs two more
+               libraries. Unzipped stripped binary is 1.8MB, as opposed to
+               0.1MB for dynamic executable. Modified README. This is not in
+               rc1.
+25 Dec 2003 - Merry Christmas and God bless us everyone.
+               Added keyboard shortcuts. Modified the documentation.
+23 Dec 2003 - Added code to searchlistshow_cb to read file name and display
+               journal tab. Now we need to jump to date containing the search text.
+               Modified documentation.
+22 Dec 2003 - Added code to searchlistshow_cb to read searchlist entry and create
+               file name to read.
+21 Dec 2003 - Deleted remnants of cancel button on Preferences tab. Modified the
+               documentation to remove references to old behaviour.
+               Added shortcut to exit button.
+               Changed searchlist browser to Hold_Browser. Added show button to allow
+               display of selected month. Added callback searchlistshow_cb to
+               show button.
+15 Oct 2003 - Modified datebutton fn in fltdjcal, to show note even when notes tab is in the
+               background. The notes were being overwritten otherwise.
+31 Aug 2003 - Modified display of note after search. Currentdaybuttonindex was not
+			being assigned.
+23 Aug 2003 - Program now opens with the About tab. On setting preferences
+			to show the fortune, program will now save it (unless it is
+			erased) even if nothing is typed into the notes.
+			Made minor changes to documentation
+17 Aug 2003 - Moved notes functions to separate file. Altered makefile to match.
+			Changing the month when the notes tab was not displayed erased
+			the first note of the new month. Fixed.
+27 July 2003 - GlobalSearch function erases notes in current month.
+			Removed old Fl_Editor dependencies from project files.
+26 July 2003 - Debugged search function with respect to notes. Removed
+			redundant data saves.
+			When no findtext is entered, no search is done.
+5 July 2003 - Changed editor for contacts to FLTK editor. Modified code to
+			read and save contact data in fltdjcontacts.cpp.
+			As before, slo-o-ow-ly things move.
+8 June 2003 - Fixed. The editor was trying to display a note which pointed to a
+			NULL pointer!
+			Modified code in save_note_to_buffer.
+2 June 2003 - Slo-o-ow-ly things move. Changed editor for notes from fl_editor
+		to inbuilt FLTK editor. Compiles. Segfaults! To fix.
+27 Apr 2003 - Changed editor for todolist from fl_editor to inbuilt FLTK editor.
+		Works, except for folding of line at edge of window. Users will
+		just have to press return at end of line. This also does not add one
+		extra line at end of file.
+24 Mar 2003 - Added statement to redraw date button after adding an appointment.
+		This was omitted earlier and buttons were not being shown
+		depressed until redrawn later!
+		Added a dummy Fl_Help Dialog, which is loaded with the help
+		file, but not shown. This allows links and images to be visible
+		in the helptab.
+23 Mar 2003 - Added display of holiday and current date to appt tab.
+		Adjusted user interface widgets. Tweaked code relating to
+		display of day/date.
+22 Mar 2003 - Fixed tab switching bug by calling getdayname from inside shownote.
+		Tweaked initialisation code to display holiday buttons at start of
+		program.
+		Added holiday textbox to journal tab.
+21 Mar 2003 - Tweaked code for global search and contact search in fltdjsearch
+		instead of fltdjcontacts.
+		To fix bug which sometimes erases notes when switching from apptab to
+		journaltab.
+		Error/Feature: Todo adds one blank line to itself every time
+					when exiting!
+17 Mar 2003 - Search code checks for foreground tab while searching
+		for strings.
+16 Mar 2003 - Edited help file. Image is not being displayed in help tab.
+14 Mar 2003 - Activated controls which go to next or previous day with
+		appointments on the appointments tab. Tweaked the UI a little.
+		Added code to show correct preferences.
+13 Mar 2003 - Added code to highlight current date and display associated note
+		at program startup. Added shownote and getdayname functions.
+		This program is getting more and more convoluted. Bad design and
+		poor implementation.
+		Resizing behaviour adjusted. Calendar controls do not change
+		size, tabs do.
+9 Mar 2003 - Cutting back auto-resize and related behaviour. The editor code
+		hangs in reformatting when the editor window goes to 0!
+  		Deleted some superfluous lines which saved data in holiday code.
+		Added multitabs to project.
+8 Mar 2003 - Added fltdjcal.cpp as a new file to the project and moved all
+		calendar code there.
+7 Mar 2003 - Added flag to signal state of tdj window (expanded/contracted).
+  		When contracted, clicking a date button expands it and shows the
+    		journal tab. For any other tab except journal and appt, the journal is
+      	shown on clicking a date buton.
+       	Added callback to catch expose of tabs. To fix display of correct info.
+        	Deleted handle function in main.
+8 Feb 2003 - Parallel developement of new single window user interface merged
+		with main fltdj code. this will be (eventually) 0.7.0
+5 Feb 2003 - Copy-paste in notes window segfaulted. Got back earlier version
+		(modified) of Fl_Editor.
+4 Jan 2003 - Modified preferences window and added tab interface.
+		Added option of getting a quote from "fortune" while
+		diaplaying empty notes.
+		Added code to delete search and fortune files from the fltdj
+		directory.
+		Found bug in which grep string was being printed on the
+		holiday and appointment windows after a global search. Rectified
+		by NULLing commontext after grep.
+		Remade tarball.
+29 Dec, 2002 - Modified help file. Made tarball. To be released as 0.6.9?
+26 Dec 2002 - Parsed the contents of results file. Perhaps complete?
+24 Dec 2002 - Filled out the skeleton for global search. Using grep at present
+		and displaying results in a separate window. Will parse the
+		text, eventually.
+23 Dec 2002 - Released as 0.6.8.
+22 Dec 2002 - Fixed appt search code.
+		Also appointments at times not in the clock are adjusted.
+		Appointment window could be closed by windowmanager. Fixed.
+		Added skeleton for global search. Not operative yet.
+19 Dec 2002 - Added code to search appointments along with notes. Needs
+		more work.
+		See how new bugs are born! Choice of displaying note and appointment
+		windows together prevented refresh of appointments when the choice
+		is not made! Fixed.
+12 Dec 2002 - Added new file fltdjsearch for global seaching code. Moved
+		find_text function into new file. Modified search code to
+  		fix bug which prevented repeat searches.
+8 Dec 2002 - Discovered a bug: 1 Dec 2002 falls on Sunday, and the first button
+		does not open a note window! Corrected. Released as 0.6.7.
+29 Nov, 2002 - Added option in Preferences window to display notes and appointment
+		windows together. Along with hot keys and update of the date
+  		after midnight all of Richard Holt's useability requests
+    		have been incorporated.
+      		Many thanks for the suggestions, Richard.
+5 Nov 2002 - Discovered bug in the code which sorts the contact info.
+		Must have been there since version 0.6.4.
+		OK, so nobody's perfect. But nobody's complained.
+		So nobody's using this program! Is there any one out there?
+		Fixed. Hopefully.
+		Released as version 0.6.6, bugfix again.
+4 Nov 2002 - Modified user interface, made all windows resizeable. Added
+		groups (using fluid) so as to keep control widgets the same size.
+		Altered user interface to allow change in window sizes.
+		Added code to modify fonts and font size.
+3 Nov 2002 - Uploaded 0.6.5 to Geocities. Notified Freshmeat.
+26 Oct 2002 - Rectified wrong tooltip on holidays window, changed Textout widgets
+		to Box.
+25 Oct 2002 - Added window callback for main and child windows to trap exit
+		from window manager. Should have been done earlier (as usual)!
+24 Oct 2002 - Added clean up call after Fl::run to enable saving of data on
+		closing program window through the window manager.
+		Added handler to trap ESC key and pass others through.
+23 Oct 2002 - Modified contact code to remove bug while deleting last contact and
+		to correctly redraw the contact data. Removed spurious
+		addition of blank data when editor is empty.
+22 Oct 2002 - Changed Textout widgets to Box in Notes and appointments windows.
+20 Oct 2002 - Modified timeout and alert code to remove spurious alerts for
+		deleted or modified appointments. This is done by reinitializing
+		the timer whenever appointments are made, changed, or deleted.
+		Should have been done earlier!
+17 Oct 2002 - Added get_date function and timeout to check_date every
+		10 minutes. This changes displayed date 10 min (max) after midnight
+		for all those who are writing the Great Daily Novel.
+		Added keybindings to main menu, menu items, and all subwindows.
+		Should have been done earlier!
+10 Oct 2002 - Released version 0.6.4
+10 Oct 2002 - Fixed code to create contact file if not present.
+6 Oct 2002 - Modified makefile to remove errors while linking with latest
+		version of FLTK (1.1.0rc7 and above)
+		Added code to editengine.cpp to get character count from line length
+		(in method GetTextBufferSize)
+8 July 2002 - Added code to sort the contact information alphabetically.
+3 July 2002 - Added check for ~/.fltdj directory at start of program.
+17 June 2002 - A segfault was being returned for the month of June 2002 when
+		trying to move past the last note.
+		The same segfault was detected for September 2001. While there
+		may be others, nothing was detected for many of the other months.
+		This happens when trying to go past the last note. This is due to
+		an anomalous value of daybutton[i] for i=38, when the function
+		should return at the end of the array. It segfaults instead when
+		it goes past the end of the array! This is fixed by a kludge.
+		This is another bugfix release. Version 0.6.3.
+12 June 2002 - Editor was returning 1 character even when nothing was typed in. A
+		kludge was added by checking CharacterCount as well as
+		GetTextBufferSize in save_note_to_buffer. This is 0.6.2, a
+		"bugfix" release. Wow.
+20 May 2002 - Laid some bugs to rest in delete_contact.
+16 May 2002 - Debugged logic of variable length contact. Seems OK. This is
+		version 0.6.1.
+		Due to changes in data saving code, may be incompatible with
+		earlier versions. Sorry.
+15 May 2002 - Recoded contacts logic to take variable number of characters.
+7 May 2002 - Added code to show month names in holiday list, and active tooltips
+		displaying the holiday description.
+6 May 2002 - Added logic to show different colored buttons for holidays
+5 May 2002 - Basic holiday data entry interface is working.
+4 May 2002 - Filled some more of the holiday code
+2 May 2002  - Filled in some holiday code
+28 Apr 2002 - Added About window. Modified callback. Added holiday window.
+		Started fltdjholidays.
+15 Apr 2002 - Changed user interface. Added menu button with About and Holiday
+		items. Modified callback. This is now version 0.6
+13 Apr 2002 - Long time no see. Changed CharacterCount fl_editor call to GetTextBufferSize.
+		Also stripped fl_editor of it bells and whistles and integrated it with fltdj.
+		This makes it independent of Robert's source tree.
+		This is now version 0.5.3, unreleased.
+7 Feb 2002  - Fixed inermittent segfaults which occurred while editing an existing note.
+4 Feb 2002  - Fixed Makefile. Removed linking with GL libs.
+3 Feb 2002  - Debugged to remove segfaults. Changed mallocs to callocs. Any novels in the offing?
+1 Feb 2002  - Recoding to remove 1000 char limit. Works mostly, a segfault here and there.
+31 Jan 2002 - Reverted back to 1000 char limit for notes. The Great Daily Novel is postponed for the time
+		being.
+29 Jan 2002 - Debugged contact facility. Program was giving segfault in dummy read line. Changed index.
+27 Jan 2002 - Rewrote helpfile in HTML format and modified program to use the HTML widget and
+		display the HTML helpfile on clicking the "Help" button.
+		Modified makefile to link fltdj with the png and jpeg libs needed for the HTML widget.
+		Modified makefile to copy the help file to the ./fltdj directory.
+		Help file now resides in doc subdirectory.
+26 Jan 2002 - Long time no see.
+		Modified code to take notes of arbitrary length. Now you can write and store that
+              	great novel in one day, every day.
+              	Added checks to verify opening of help, contact, and to-do data files.
+              	Added check for an already running copy of fltdj at startup via lockfile.
+9 Nov 2001 - Long time no see.
+		Started 0.5.0. Added tooltips. Requires version 1.1 of FLTK.
+5 Apr 2001 - Bugfix. 0.4.1 to 0.4.2
+		Modified compare routine to eliminate compilation errors.
+		Added check for appointment window before refreshing the notes
+		window.
+2 Apr 2001 - Bugfix. 0.4 to 0.4.1.
+		Deleted notes now stay deleted in the current session!
+		Fixed function prototypes to eliminate some errors reported by
+		gcc 2.95.
+10 Mar 2001 - Started 0.4
+27 Feb 2001 - Bugfix. 0.3.1 to 0.3.2
+26 Feb 2001 - Bugfix. 0.3 to 0.3.1.
+25 Feb 2001 - Uploaded 0.3 to www.geocities.com/letapk
+21 Feb 2001 - Got Fl_Editor 0.4.1 (with refresh bug fixed). Changed Makefile
+		to reflect new name of library.
+		Started version 0.3
+16 Feb 2001 - Fixed another note window refresh bug. 0.22 to 0.23
+14 Feb 2001 - Fixed note window refresh bug. 0.21 to 0.22
+13 Feb 2001 - Fixed a segfault and appointment window refresh bug. 0.2 to 0.21
+11 Feb 2001 - Uploaded 0.2 to www.geocities.com/letapk
+28 Dec 2000 - Started version 0.2
+23 Dec 2000 - Uploaded 0.1 to www.geocities.com/letapk
+17 Sep 2000 - Started version 0.1

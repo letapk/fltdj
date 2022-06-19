@@ -1,0 +1,217 @@
+What is fltdj?
+--------------
+fltdj is a PIM program in the making. 
+
+What does PIM mean?
+-------------------
+Personal Information Manager (I think), a program which manages daily notes,
+appointments, alarms, to-do lists, contacts, addresses, etc. 
+
+What can it do, in its present form? 
+------------------------------------
+If you are in the habit of keeping daily notes, or a diary, or a journal  of
+your activities, fltdj can keep them organised and accessible. In this version
+you can maintain your appointments, to-do lists, addresses and contacts. It will
+alert you 10 minutes before any upcoming appointments as well.
+
+That's nice, but will it ever do anything useful?
+------------------------------------------------------
+If it will, do you think I would be giving it away free?
+While there is no guarantee that it will do anything useful, or anything else,
+there is every probability of the version number increasing in the future as
+and when I get the time to add more features (especially if anyone asks).
+
+How do I use it?
+----------------
+The user interface is a nice looking calendar. You can store your thoughts
+for a particular day by clicking on the appropriate date, and entering the 
+data into the editor at the right. To retrieve the notes for a particular day, click
+on the desired date. The same editor window displays the notes, and you can add to or
+modify the text if needed.
+A click on the "Appointments" tab brings up your appointment list for the 
+current day. You can add and make changes to or delete any appointment.
+The row of tabs gives access to options for maintaining a To-do list, a 
+holidays/anniversaries list as well as names and addresses of your contacts. 
+Selecting these tabs will display windows where you can enter, modify, or delete 
+data.
+Read the file "help.html" in the doc/ subdirectory for more details.
+There's a nice clock displayed as well, so you can see what time it is. And the
+current day and date is shown at the bottom of the calendar window.
+fltdj is a small program, and takes up very little space on the desktop, as
+well as your hard disk.
+
+What do I need to compile it? 
+-----------------------------
+You need FLTK (pronounced Full-tick), the Fast Light Tool Kit, a
+multi-platform library, from http://www.fltk.org.
+
+The program has been tested on version 1.3.8 of FLTK.
+This should be downloaded, compiled and installed in the default places 
+BEFORE compiling fltdj.
+
+Changes in version 0.7-rc1
+--------------------------------
+Some more key-bindings have been added. See the documentation.
+
+The global search facility scans and reports separate results for the journal entries and
+appointments. You can click on the results to display the journal or appointments.
+
+Sorting of contact data, which somehow got left out in 0.7,  re-enabled.
+
+Major changes in version 0.7-beta
+---------------------------------
+There have been extensive changes in the user interface. The plethora of windows
+popping up all over the screen in earlier versions has been discarded in favour 
+of one window with a row of tabs which provides access to the various functions. 
+The documentation has been updated to reflect this.
+
+Starting from version 0.7-beta, the program no longer uses the Fl_Editor
+widget written by Robert Kesterson. The editor class provided within
+FLTK is used instead. This does *not* automatically word-wrap, which means that
+a carraige-return needs to be typed in when you reach the end of a line, else the
+words start flowing off the right edge with a horizontal scrollbar automatically
+popping up at the bottom of the editor window.
+
+One of the reasons for substituting Robert's otherwise excellent Fl_Editor
+was that syntax highlighting is possible with the internal editor. 
+
+Not that I know what to do with this facility, at the moment...
+
+Also starting from this version, the excellent Multitabs widget provided  
+by Alexey Parshin in the FLTK bazaar has been included in the source
+for fltdj. Many thanks, Alexey.
+
+What else does fltdj use?
+------------------------
+fltdj uses the 'cal' utility to generate the calendar display, and the 'date'
+command to show the current date. These are a part of all Linux distributions.
+
+How do I compile and install it?
+--------------------------------
+First copy the file fltdj-XX-src.tar.gz to your home directory.
+Type 'tar -zxvf fltdj-XX-src.tar.gz'. Press Enter. This will decompress and
+extract the files to a directory called 'fltdj-XX-src', where XX stands for the
+version number.
+
+Change to that directory, 'cd fltdj-XX-src'.
+
+Type 'make clean', if you are recompiling, just to be on the safe side.
+This removes any old object files and binaries, 
+
+To construct the dynamic executable, just put all the files in one subdirectory
+and type 'make fltdj', or just 'make'.
+This creates the smaller executable, which is around 0.1 MB after installation,
+but which needs the required libraries at run time.
+
+If you want the static executable, type 'make static'.
+This command creates a larger executable, which is around 2 MB after installation,
+but which can be copied and run on another system which does not have the required
+libraries. 
+
+The Makefile will create a "hidden" directory in your home area called ~/.fltdj.
+This is where the help file (help.tdj) and your data files will be kept.
+Copy any data file ending in the suffix ".tdj" from earlier versions of the
+program into this directory. The program will continue to read and use them.
+
+After becoming superuser, type 'make install'.
+This will strip the debugging information from the binary, thus reducing the size
+to the values written above. It will copy the binary (named fltdj) to /usr/local/bin
+and allow you to run the program from any directory.
+If you are not the superuser, ask the System Administrator to copy the
+file 'fltdj' to /usr/local/bin.
+
+That's it.
+
+Contact me if there is a problem. It would be nice to hear from you even if
+there isn't any. But do contact me if you find a bug, or if your compiler reports
+some errors (see below).
+
+Are there any bugs?
+-------------------
+Of course there are. Did you really have to ask? I have tried fixing what I 
+could find. The others are left for you to discover.
+
+There are some differences in the checking of function declarations
+between different versions of the GNU C compiler.
+From user feedback, I have been able to rectify some
+of them.
+
+The code for this version compiles cleanly with gcc/g++ version 11.2, which is what
+I have at present, on KUbuntu 22.04.
+If you have any other version of Gcc, reports of any errors you encounter while 
+compiling will be highly appreciated (and fixes, too, if possible!).
+
+Known issues in 0.7
+-------------------
+This means that these are bugs which will be fixed later. Small bugs, but bugs all
+the same.
+
+While searching for text globally (when the "Global Search" tab is in the
+foreground), a phrase typed in the "Search for" box may lead to
+spurious entries in the results window. So only a single word should be typed
+when searching globally.
+
+However, when searching inside a particular month (that's when the "Journal" tab is
+visible), a phrase typed in the search box there does not seem to trouble the program.
+
+When a particular word has been found in the text describing an appointment, the program
+always displays the journal entry for that particular date when the "Show" button on the
+Global Search tab is clicked. To see the result of the search, click on the Appointments
+tab.
+
+Acknowledgments, Thanks and Feedback
+------------------------------------
+Many, many thanks are due to:
+-Robert Kesterson, for his excellent FLTK editor widget, used in earlier versions
+     of fltdj
+-Juraj Ziegler, who reported errors and also sent the required modifications.
+-Lance Perry, who suggested putting the data files in a hidden directory in the
+	user's area, and supplied the patches.
+-Greg Sjaardema, who urged me to enable the program to save the notes file without
+	exiting.
+-Don van der Haghen, who sent error messages encountered on his system.
+-Joe Krahn, who suggested that the program should check for multiple instances on startup,
+	and that file access operations should be verified, in case the hidden
+	directory ~/.fltdj is absent. Apparently some users may do an "rm" on it
+	by mistake!
+	One of his suggestions is still not implemented. It will be, Real Soon Now...
+-Torquil Gault, who wanted to use parts of the fltdj code for a
+	(quote) "quick & dirty GUI set date pgm for the ipaq" (unquote)
+	Be my guest, the program is released under the Gnu GPL. I hope you were
+	successful.
+-Benjamin Long, you never told me if you succeeded in cross-compiling fltdj
+	for your iPaq Handheld!
+-R. K. Marwah, for valuable, live, actual user feedback, and constructive
+	suggestions.
+-Richard Holt, for catching the date not changing after midnight. 
+-Rajesh Deshpande, for catching the errors with new versions of FLTK.
+-Tom Brown, for the bug reports and error messages.
+-Janet Casey for putting fltdj in the GNU software directory, and for pointing out that
+	the GPL license as supplied with fltdj in not quite complete.
+-Darald Bantel, just for mailing me that he could successfully install fltdj.
+-Leslie H. Watter, Jeremy M. Dolan, Luke Th. Bullock, Szabo Peter and SG for
+	alerting me about the broken links on the web page containing
+	the download files.
+-Alexey Parshin for the excellent Multitabs widget.
+
+What is the copying policy?
+---------------------------
+While it is copyright, (C) 2001 onwards, Kartik Patel, the program is also free
+software; you can redistribute it and/or modify it under the terms of the GNU
+General Public License as published by  the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.  This program
+is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You
+will receive a copy of the GNU General Public License along with this program;
+for more information, write to the Free Software  oundation, Inc., 675 Mass
+Ave, Cambridge, MA 02139, USA. 
+
+What else?
+----------
+That covers it, more or less. Email me if there is anything left out. 
+Enjoy!
+
+Kartik Patel
+letapk@gmail.com
+https://letapk.wordpress.com

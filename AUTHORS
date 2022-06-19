@@ -1,0 +1,13 @@
+The program "fltdj" is written by and is Copyright (c), 2000 onwards
+Kartik Patel
+E-mail: letapk@gmail.com
+
+The following files:
+
+cmultitabs.h
+cmultitabs.cxx
+
+are from the MultiTabs widget for FLTK written by Alexey Parshin. They are used
+as-is without any modification. See the FLTK bazaar at http://www.fltk.org.
+
+Thanks for the great widget, Alexey.
